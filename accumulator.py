@@ -16,7 +16,7 @@ define item(i):
 define combine(x, y):
     return x + y
 define sum_i(n):
-    return accumulator(item, combine, 0, n)
+    return accumulator(item, combine, 0, n, 1)
 
 lambda版本(语法糖,更加简洁):
 def sum_i(n):
@@ -24,7 +24,8 @@ def sum_i(n):
         lambda i : i,
         lambda x,y : x + y,
         0,
-        n
+        n,
+        1
     )
 """
 def accumulator(item, combine, k, n, start):
